@@ -1,24 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Biblioteca.Negocio
 {
     public class Cliente
     {
         private string nombre;
-        private int numero;
+        private string apellido;
+        private int dni;
+        private int edad;
 
-        public Cliente(string nombre, int numero)
+        public Cliente(string nombre, string apellido, string strDNI, decimal dEdad)
         {
             Nombre = nombre;
-            Numero = numero;
-
+            Apellido = apellido;
+            DNI = strDNI;
+            Edad = (int)dEdad;
         }
 
         public string Nombre { get => nombre; set => nombre = value; }
-        public int Numero { get => numero; set => numero = value; }
+        public string Apellido { get => apellido; set => apellido = value; }
+        public string DNI 
+        { 
+            set
+            {
+                dni = validarDNI(value);
+            }
+        }
+        public int Edad 
+        {
+            set
+            {
+                edad = value;
+            }
+        }
+
+        private int validarDNI(string strDNI) 
+        {
+            return !int.TryParse(strDNI, out int dni) || strDNI is null ? 0 : dni;
+        }
+
     }
 }
