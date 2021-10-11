@@ -1,5 +1,5 @@
 ﻿
-namespace Biblioteca.Negocio
+namespace Biblioteca
 {
     public class Cliente
     {
@@ -10,28 +10,12 @@ namespace Biblioteca.Negocio
 
         public Cliente(string nombre, string apellido, string strDNI, decimal dEdad)
         {
-            Nombre = nombre;
-            Apellido = apellido;
-            DNI = strDNI;
-            Edad = (int)dEdad;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.dni = validarDNI(strDNI);
+            this.edad = (int)dEdad;
         }
 
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Apellido { get => apellido; set => apellido = value; }
-        public string DNI 
-        { 
-            set
-            {
-                dni = validarDNI(value);
-            }
-        }
-        public int Edad 
-        {
-            set
-            {
-                edad = value;
-            }
-        }
 
         private int validarDNI(string strDNI) 
         {

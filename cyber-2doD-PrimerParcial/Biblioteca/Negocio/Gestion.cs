@@ -4,30 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Biblioteca.Negocio
+namespace Biblioteca
 {
     public abstract class Gestion
     {
-        private static List<Cliente> listaClientes = new List<Cliente>();
+        private List<Computadora> listaComputadores;
+        private Queue<Puesto> computadoresEnUso;
+        private Queue<Puesto> computadoresEnEspera;
+        private int puestoComputadoraDisponible;
 
-
-        public static void GuardarCliente(Cliente cli) 
+        private Gestion()
         {
-            if (cli is not null) 
-            {
-                listaClientes.Add(cli);
-            }
+            this.listaComputadores = new List<Computadora>();
+            this.computadoresEnUso = new Queue<Puesto>();
+            this.computadoresEnEspera = new Queue<Puesto>();
         }
-        public static string MostrarClientes() 
+
+        public Gestion(int computadorasDisponibles)
+            : this()
+        {
+            this.puestoComputadoraDisponible = computadorasDisponibles;
+        }
+
+
+
+
+
+        public string MostrarComputadorasEnUso() 
         {
             StringBuilder sb = new();
 
             sb.AppendLine("DNI  ---  NOMBRE  ---  APELLIDO  ---  EDAD");
-            foreach (Cliente cli in listaClientes)
-            {
-                sb.AppendFormat("{0} -- ", cli.Apellido);
-                sb.AppendFormat("{0} -- ", cli.Nombre);
-            }
 
             return sb.ToString();
         }

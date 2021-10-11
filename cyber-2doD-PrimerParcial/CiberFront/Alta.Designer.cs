@@ -1,7 +1,7 @@
 ﻿
 namespace CiberFront
 {
-    partial class FormClientes
+    partial class Alta
     {
         /// <summary>
         /// Required designer variable.
@@ -29,32 +29,12 @@ namespace CiberFront
         /// </summary>
         private void InitializeComponent()
         {
-            this.rTxtBxClientes = new System.Windows.Forms.RichTextBox();
-            this.SuspendLayout();
-            // 
-            // rTxtBxClientes
-            // 
-            this.rTxtBxClientes.Location = new System.Drawing.Point(51, 72);
-            this.rTxtBxClientes.Name = "rTxtBxClientes";
-            this.rTxtBxClientes.Size = new System.Drawing.Size(689, 293);
-            this.rTxtBxClientes.TabIndex = 0;
-            this.rTxtBxClientes.Text = "";
-            // 
-            // FormClientes
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.rTxtBxClientes);
-            this.Name = "FormClientes";
-            this.Text = "FormClientes";
-            this.Load += new System.EventHandler(this.FormClientes_Load);
-            this.ResumeLayout(false);
-
+            this.Text = "Alta";
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox rTxtBxClientes;
     }
 }

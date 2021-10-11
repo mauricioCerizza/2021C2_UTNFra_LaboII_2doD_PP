@@ -7,21 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Biblioteca.Negocio;
+using Biblioteca;
 
 namespace CiberFront
 {
-    public partial class FormClientes : Form
+    public partial class Home : Form
     {
-        public FormClientes()
+        public Home()
         {
             InitializeComponent();
         }
 
-
-        private void FormClientes_Load(object sender, EventArgs e)
-        {
-            rTxtBxClientes.Text = Gestion.MostrarClientes();
-        }
     }
 }
